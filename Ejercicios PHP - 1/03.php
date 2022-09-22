@@ -14,7 +14,7 @@
             echo "-";
         }
 
-        for ($estrellas = 1; $estrellas <= ($i * 2) -1; $estrellas++) {
+        for ($estrellas = 1; $estrellas <= ($i * 2) - 1; $estrellas++) {
             echo "*";
         }
 

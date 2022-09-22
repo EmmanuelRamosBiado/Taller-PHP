@@ -8,7 +8,6 @@
     <h1>Ejercicio 4</h1>
     <?php
 
-
     $contador = 0;
     $cont6 = 0;
 
