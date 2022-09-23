@@ -1,12 +1,15 @@
 <html>
-    <head>
 
-    </head>
+<head>
 
-    <body>
-        <?php
+</head>
+
+<body>
+    <?php
     require_once('funciones.php');
-            elMayor(2, 3, 4);
-        ?>
-    </body>
+    elMayor(2, 3, 4);
+    echo "$c";
+    ?>
+</body>
+
 </html>

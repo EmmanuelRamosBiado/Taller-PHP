@@ -9,5 +9,3 @@ function elMayor($a, $b, &$c){
         $c = 0;
     }
 }
-
-?>
