@@ -91,10 +91,10 @@
 
     echo "<tr>";
     echo "<td>";
-    echo "$primero ^2";
+    echo "$primero ^ $segundo";
     echo "</td>";
     echo '<td class="resultado">';
-    echo $primero ** 2;
+    echo $primero ** $segundo;
     echo "</td>";
     echo "</tr>";
 

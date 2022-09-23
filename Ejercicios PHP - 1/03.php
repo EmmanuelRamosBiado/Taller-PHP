@@ -5,6 +5,7 @@
 </head>
 
 <body>
+<h1>Ejercicio 3</h1>
     <?php
 
     $numeroAleatorio = random_int(1, 9);
