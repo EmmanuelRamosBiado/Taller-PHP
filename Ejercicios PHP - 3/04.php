@@ -1,11 +1,27 @@
 <?php
-$deportes = ["Futbol" => "/img/futbol.png", "Baloncesto" => "/img/baloncesto.png", "Tennis" => "/img/tennis.png", "Boxeo" => "/img/boxeo", "Atletismo" => "/img/atletismo.png"];
+$deportes = ["Futbol" => "/img/futbol.jpg", "Baloncesto" => "/img/baloncesto.jpg", "Tennis" => "/img/tennis.jpg", "Boxeo" => "/img/boxeo.jpg", "Atletismo" => "/img/atletismo.png"];
 ?>
 
 <html>
 
 <head>
     <meta charset="UTF-8">
+    <style>
+        img {
+            max-height: 75px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -16,9 +32,16 @@ $deportes = ["Futbol" => "/img/futbol.png", "Baloncesto" => "/img/baloncesto.png
             <th>Deporte</th>
             <th>Logo</th>
         </tr>
-        <tr>
 
-        </tr>
+        <?php
+        foreach ($deportes as $nombre => $imagen) {
+            echo "<tr>";
+            echo "<td>$nombre</td>";
+            echo "<td><img src='$imagen'></td>";
+            echo "</tr>";
+        }
+        ?>
+
     </table>
 </body>
 

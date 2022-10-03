@@ -22,9 +22,17 @@
 
     <?php
     $numeros = [];
+    $repeticion = [];
+    $repeticion = array_count_values($numeros);
 
     for ($i = 0; $i <= 19; $i++) {
         $numeros[$i] = random_int(1, 10);
+    }
+
+    function valorRepetido ($tabla){
+        $tvaloresyfrecuencias = array_count_values($tabla);
+        $moda= array_search(max($tvaloresyfrecuencias), $tvaloresyfrecuencias);
+        echo "$moda";
     }
     ?>
 
@@ -56,7 +64,7 @@
             </td>
             <td>
                 <?php
-                echo print_r(array_count_values($numeros));
+                    valorRepetido($numeros);
                 ?>
             </td>
         </tr>
