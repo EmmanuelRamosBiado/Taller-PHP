@@ -6,8 +6,7 @@ $suma2 = [];
 
 function generaAleatorio(&$tabla, &$operacion)
 {
-
-
+    // En este bucle for se genera un número aleatorio, se introduce en la tabla de $sumaX para luego hacer la suma y se dibuja el emoji del dado.
     for ($i = 1; $i < 6; $i++) {
         $num = random_int(1, 6);
         $operacion[$i] = $num;
@@ -15,18 +14,23 @@ function generaAleatorio(&$tabla, &$operacion)
     }
 }
 
+// Se suman todos los valores del array y se le resta el valor mínimo y el valor máximo del array.
 function suma($operacion)
 {
     echo (array_sum($operacion) - min($operacion) - max($operacion));
 }
 
+// Aquí se comparan las sumas de los array e indica quien ha ganado o si han empatado.
 function resultado($operacion1, $operacion2)
 {
     if ((array_sum($operacion1) - min($operacion1) - max($operacion1)) > (array_sum($operacion2) - min($operacion2) - max($operacion2))) {
+        // Gana el jugador 1
         echo "Ha ganado el jugador 1";
     } else if ((array_sum($operacion2) - min($operacion2) - max($operacion2)) > (array_sum($operacion1) - min($operacion1) - max($operacion1))) {
+        // Gana el jugador 2
         echo "Ha ganado el jugador 2";
     } else if ((array_sum($operacion2) - min($operacion2) - max($operacion2)) == (array_sum($operacion1) - min($operacion1) - max($operacion1))) {
+        // Empate
         echo "Empate";
     }
 }
@@ -36,7 +40,25 @@ function resultado($operacion1, $operacion2)
 
 <head>
     <meta charset="UTF-8">
+    <!-- Estilos -->
     <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        td {
+            border: 1px solid black;
+        }
+
+        .jugador1 {
+            background-color: greenyellow;
+        }
+
+        .jugador2 {
+            background-color: cyan;
+        }
+
         td {
             padding: 1rem;
         }
@@ -58,7 +80,7 @@ function resultado($operacion1, $operacion2)
     <p>Actualice la página para mostrar una nueva tirada.</p>
 
     <table>
-        <tr>
+        <tr class="jugador1">
             <td class="jugador">Jugador 1</td>
             <td class="dados">
                 <?php
@@ -72,7 +94,7 @@ function resultado($operacion1, $operacion2)
             </td>
         </tr>
 
-        <tr>
+        <tr class="jugador2">
             <td class="jugador">Jugador 2</td>
             <td class="dados">
                 <?php
@@ -87,7 +109,7 @@ function resultado($operacion1, $operacion2)
         </tr>
     </table>
     <p>
-        Resultado:
+        <b> Resultado: </b>
         <?php
         resultado($suma1, $suma2);
         ?>
