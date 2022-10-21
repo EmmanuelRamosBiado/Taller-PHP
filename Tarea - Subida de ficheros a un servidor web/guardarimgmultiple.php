@@ -24,6 +24,9 @@ for ($i = 0; $i <= $numArchivos; $i++) {
         10 => 'Ese tipo de archivo no es aceptado'
     ];
 
+    
+
+    // Lo mío
     if (is_file($nombreDirectorio)) {
         $comprobacion = false;
         echo ($codigosErrorSubida[9]);
