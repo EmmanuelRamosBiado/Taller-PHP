@@ -43,6 +43,8 @@ else {
             break;
         case "Detalles": // Mensaje y detalles
             echo "Detalles de su opinión";
+            sinCodigo($_REQUEST['comentario']);
+            sinCodigo($_REQUEST['tema']);
             include_once 'app/comentariorelleno.php';
             include_once 'app/detalles.php';
             break;

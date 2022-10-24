@@ -6,15 +6,21 @@ function usuarioOk($usuario, $contraseña): bool
    if ((strlen($usuario) >= 8) && ($contraseña == strrev($usuario))) {
       $valor = true;
    }
-   
+
    return $valor;
+}
+
+function sinCodigo(&$frase)
+{
+   $frase = htmlspecialchars($frase);
 }
 
 function letraRepetidas($frase)
 {
    $tvaloresyfrecuencias = array_count_values(str_split($frase));
    arsort($tvaloresyfrecuencias);
-   echo array_keys($tvaloresyfrecuencias)[0];
+   $letra = array_keys($tvaloresyfrecuencias)[0];
+   echo "$letra";
 }
 
 function palabrasRepetidas($frase)
