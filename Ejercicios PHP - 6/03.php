@@ -4,6 +4,14 @@ if (isset($_COOKIE["edad"])) {
     $edad = $_COOKIE["edad"];
 }
 
+if (isset($_COOKIE["genero"])) {
+    $genero = $_COOKIE["genero"];
+}
+
+if (isset($_COOKIE["deportes"])) {
+    $deportes = $_COOKIE["deportes"];
+}
+
 if (isset($_POST["guardar"])) {
     if (isset($_POST["edad"])) {
         $edad = $_POST["edad"];
@@ -16,7 +24,8 @@ if (isset($_POST["guardar"])) {
     }
 
     if (isset($_POST["deportes"])) {
-        
+        $deportes = $_POST["deportes"];
+        setcookie("deportes", implode(",", $deportes), time() + 7 * 24 * 3600);
     }
 }
 
@@ -51,9 +60,9 @@ if (isset($_POST["borrar"])) {
                     <label>Edad</label> <input type="number" name="edad" value="<?php echo "$edad" ?>"><br>
                     Género :<br>
                     <label> Mujer </label>
-                    <input type="radio" name="genero" value="Mujer">
+                    <input type="radio" name="genero" value="Mujer" <?php echo "$radio1" ?>>
                     <label> Hombre</label>
-                    <input type="radio" name="genero" value="Hombre">
+                    <input type="radio" name="genero" value="Hombre" <?php echo "$radio2" ?>>
                     <br>
                     <label>Deportes</label><br>
                     <select name="deportes[]" multiple="multiple" size="3">
