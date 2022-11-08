@@ -28,7 +28,7 @@ session_start();
         echo 'Seleccione la fruta: <select name="frutas" id="frutas"><option value="Naranja">Naranja</option><option value="Limón">Limón</option><option value="Plátano">Plátano</option><option value="Manzanas">Manzanas</option></select></form>';
         echo 'Cantidad: <input type="number" name="cantidad"> &nbsp';
         echo '<input type="submit" value="Anotar"> &nbsp';
-        echo '<input type="button" value="Terminar">';
+        echo '<input type="button" value="Terminar" name="terminar">';
         echo '</form>';
     }
 
