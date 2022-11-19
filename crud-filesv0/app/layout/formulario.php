@@ -1,15 +1,21 @@
+<?php
+$_SESSION["token"] = md5(uniqid(mt_rand(), true));
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>CRUD DE USUARIOS</title>
 <link href="web/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="web/js/funciones.js"></script>
 </head>
 <body>
 <div id="container" style="width: 600px;">
 <div id="header">
 <h1>GESTIÓN DE USUARIOS versión 1.0</h1>
 </div>
+<div id="msg"> <?= isset($msg)?$msg:"" ?></div>
 <div id="content">
 <p> Datos del usuario: </p>
 <form   method="POST">
@@ -24,6 +30,7 @@
  <tr><td>Comentario </td><td>
  <input type="text" 	name="comentario" value="<?=$comentario ?>" <?= ($orden == "Detalles")?"readonly":"" ?> size=20></td></tr>
  </table>
+ <input type="hidden" name="token" value="<?= $_SESSION["token"] ?>" >
  <input type="submit"	 name="orden" 	value="<?=$orden?>">
  <button onclick="window.history.back();"> Volver </button>
 </form> 

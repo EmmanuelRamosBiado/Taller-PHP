@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 // POST Formulario de alta o de modificación
 else {
     if (isset($_POST['orden'])) {
+        checkCSRF();
         switch ($_POST['orden']) {
             case "Nuevo":
                 accionPostAlta();
