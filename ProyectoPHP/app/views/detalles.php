@@ -18,7 +18,7 @@
 
                 <img src="<?= 'https://robohash.org/' . $cli->id . '.png' ?>" alt="Foto de la persona"></img>
 
-            <?php endif; ?>
+            <?php endif ; ?>
         </td>
         <td rowspan="7">
             <img src="https://flagcdn.com/w2560/<?php echo strtolower(codigoPais($cli->ip_address)) ?>.jpg" alt="Bandera">
@@ -57,9 +57,8 @@
 
 </table>
 
-<iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q= <?php echo latitud($cli->ip_address).'%20'. longitud($cli->ip_address)?>&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-<p><?php echo longitud($cli->ip_address).'%20'. latitud($cli->ip_address)?></p>
-<p><?php echo $cli->ip_address?></p>
+<iframe width="300" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q= <?php echo latitud($cli->ip_address).'%20'. longitud($cli->ip_address)?>&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+
 <form>
     <input type="hidden" name="id" value="<?= $cli->id ?>">
     <button type="submit" name="nav-detalles" value="Anterior"> Anterior << </button>

@@ -12,7 +12,7 @@
  <td><input type="text" name="last_name" value="<?=$cli->last_name ?>"  ></td></tr>
  </tr>
  <tr><td>email:</td> 
- <td><input type="email" name="email" value="<?=$cli->email ?>" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" ></td></tr>
+ <td><input type="email" name="email" required value="<?=$cli->email ?>" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" ></td></tr>
  </tr>
  <tr><td>gender</td> 
  <td><input type="text" name="gender" value="<?=$cli->gender ?>"  ></td></tr>

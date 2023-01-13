@@ -106,9 +106,9 @@ function crudPostModificar()
 function codigoPais($ip)
 {
     if (isset($ip)) {
-        $detalles = file_get_contents('http://www.geoplugin.net/json.gp?ip=' . $ip);
+        $detalles = file_get_contents('http://ip-api.com/json/' . $ip);
         $json = json_decode($detalles);
-        return $json->geoplugin_countryCode;
+        return $json->countryCode;
     } else {
         return 'IP is empty.';
     }
@@ -116,21 +116,21 @@ function codigoPais($ip)
 
 function latitud($ip){
     if (isset($ip)) {
-        $detalles = file_get_contents('http://www.geoplugin.net/json.gp?ip=' . $ip);
+        $detalles = file_get_contents('http://ip-api.com/json/' . $ip);
         $json = json_decode($detalles);
-        return $json->geoplugin_latitude;
+        return $json->lat;
     } else {
-        return 'IP is empty.';
+        return 'IP está vacío';
     }
 }
 
 function longitud($ip){
     if (isset($ip)) {
-        $detalles = file_get_contents('http://www.geoplugin.net/json.gp?ip=' . $ip);
+        $detalles = file_get_contents('http://ip-api.com/json/' . $ip);
         $json = json_decode($detalles);
-        return $json->geoplugin_longitude;
+        return $json->lon;
     } else {
-        return 'IP is empty.';
+        return 'IP está vacío.';
     }
 }
 
