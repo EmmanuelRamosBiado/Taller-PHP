@@ -7,7 +7,9 @@
         <td><input type="number" name="id" value="<?= $cli->id ?>" readonly> </td>
         <td rowspan="7">
             <?php
-            $rutaFoto = '../uploads/0000000' . $cli->id . '.jpg';
+            $carpeta = "../uploads";
+            $directorio = dir($carpeta);
+            $rutaFoto = '../uploads/00000' . $cli->id . '.jpg';
             ?>
 
             <?php if (file_exists($rutaFoto)) : ?>
@@ -19,6 +21,11 @@
                 <img src="<?= 'https://robohash.org/' . $cli->id . '.png' ?>" alt="Foto de la persona"></img>
 
             <?php endif ; ?>
+
+            <?php
+            closedir($carpeta);
+            ?>
+
         </td>
         <td rowspan="7">
             <img src="https://flagcdn.com/w2560/<?php echo strtolower(codigoPais($cli->ip_address)) ?>.jpg" alt="Bandera">
