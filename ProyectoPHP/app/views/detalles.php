@@ -6,25 +6,8 @@
         <td>id:</td>
         <td><input type="number" name="id" value="<?= $cli->id ?>" readonly> </td>
         <td rowspan="7">
-            <?php
-            $carpeta = "../uploads";
-            $directorio = dir($carpeta);
-            $rutaFoto = '../uploads/00000' . $cli->id . '.jpg';
-            ?>
 
-            <?php if (file_exists($rutaFoto)) : ?>
-
-                <img src="<?= $rutaFoto ?>" alt="Foto">
-
-            <?php else : ?>
-
-                <img src="<?= 'https://robohash.org/' . $cli->id . '.png' ?>" alt="Foto de la persona"></img>
-
-            <?php endif ; ?>
-
-            <?php
-            closedir($carpeta);
-            ?>
+            <?= foto($cli->id); ?>
 
         </td>
         <td rowspan="7">
@@ -64,7 +47,7 @@
 
 </table>
 
-<iframe width="300" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q= <?php echo latitud($cli->ip_address).'%20'. longitud($cli->ip_address)?>&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+<iframe width="300" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q= <?php echo latitud($cli->ip_address) . '%20' . longitud($cli->ip_address) ?>&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 
 <form>
     <input type="hidden" name="id" value="<?= $cli->id ?>">
